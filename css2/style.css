@@ -1,0 +1,901 @@
+@charset "utf-8";
+/* 朝陽株式会社サイト CSS */
+
+html {
+  font-size: 62.5%;
+  font-family: "Noto Sans JP", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  font-family: "Noto Sans JP";
+  background-color: #fffffd;
+  font-feature-settings: "palt";
+  color: #32312f;
+}
+
+/* * {
+  outline: 2px solid blue;
+} */
+
+/* ------------------------------------
+TOPページ
+------------------------------------- */
+.wrapper {
+  flex-direction: column;
+  margin: 0 auto;
+  box-sizing: border-box;
+  font-size: 16px;
+  overflow: hidden;
+  min-height: 100vh;
+
+}
+
+/* .fix_menu
+------------------------------------- */
+.fix_menu {
+  background-color: rgba(255, 255, 255, 0);
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 999;
+  height: 70px;
+  padding: 0.5vw ;
+
+}
+
+.fix_menu .rogo img {
+  width: 200px;
+  height: auto;
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 780px) {
+  .fix_menu .rogo {
+    padding: 10px 10px;
+    top: 0;
+    left: 0;
+    position: absolute;
+  }
+}
+/* nav .header_menu
+------------------------------------ */
+.header_menu {
+  display: flex;
+  
+}
+
+.header_menu li {
+  cursor: pointer;
+  padding:20px 0;
+  
+}
+
+.header_menu li a {
+  font-size: 2rem;
+  font-family: "Roboto";
+  text-decoration: none;
+}
+
+.index .header_menu li a {
+  color: rgb(255, 255, 255);
+}
+
+/* .headerColorScroll
+------------------------------------ */
+.header_menu li a.headerColorScroll {
+  color: #000000;
+  transition: color 0.2s ease-out;
+}
+
+.fix_menu.headerColorScroll {
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.header_rogo.headerColorScroll.-before {
+  display: none;
+}
+.header_rogo.-after {
+  display: none;
+}
+.header_rogo.headerColorScroll.-after {
+  display: block;
+}
+
+/* #switch
+------------------------------------ */
+#switch {
+  display: none;
+}
+@media screen and (max-width: 780px) {
+  #switch ~ label {
+    padding: 12px 12px;
+    width: 60px;
+    height: 60px;
+    background: #ffffff00;
+    position: fixed;
+    box-sizing: border-box;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    cursor: pointer;
+  }
+  #switch ~ label span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: #fff;
+    position: absolute;
+    -webkit-transition: 0.2s transform;
+    transition: 0.2s transform;
+  }
+  #switch ~ label span:before,
+  #switch ~ label span:after {
+    content: "";
+    display: block;
+    background: #fff;
+    position: absolute;
+    width: 22px;
+    height: 2px;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  #switch ~ label span:before {
+    top: -9px;
+  }
+  #switch ~ label span:after {
+    top: 9px;
+  }
+  #navwrap {
+    padding-top: 0;
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: calc(100% - 60px);
+    height: 100%;
+    background: rgba(255, 255, 255, 0.648);
+    transition: all 0.4s;
+    padding: 60px;
+    box-sizing: border-box;
+  }
+  #switch:checked ~ #navwrap {
+    display: block;
+    top: 0;
+  }
+  .header_menu {
+    display: flex;
+    flex-direction: column;
+  }
+  .header_menu li {
+    margin: 0 auto 30px;
+  }
+  .header_menu li a {
+    color: #171717;
+  }
+  .scroll-prevent {
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+  }
+}
+/* .btn
+------------------------------------ */
+.btn {
+  position: relative;
+  display: inline-block;
+  width: 170px; /* 横幅 */
+  height: 30px; /* 縦幅 */
+  line-height: 30px;
+  overflow: hidden;
+}
+.btn__text {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  transition: all 0.4s;
+}
+.btn__text:nth-child(1) {
+  top: 0;
+}
+.btn__text:nth-child(2) {
+  top: -100%;
+}
+.btn:hover .btn__text:nth-child(1) {
+  top: 100%;
+}
+
+.btn:hover .btn__text:nth-child(2) {
+  top: 0;
+}
+
+/* fv
+-------------------------------------*/
+.fv {
+  height: 400px;
+  position: relative;
+  z-index: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.fv h2 {
+  position: absolute;
+  top: 170px;
+  left: 100px;
+  letter-spacing: 4px;
+  color: rgba(49, 47, 47, 0.842);
+  padding: 80px 0px;
+  font-weight: 500;
+  font-size: 5.5rem;
+}
+
+.fv span {
+  font-size: 2.5rem;
+  padding: 0 20px;
+}
+
+/* .index fv
+-------------------------------------*/
+.index .fv {
+  background: url(../images/sky_img.png);
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  max-width: 100%;
+}
+
+.index .fv img {
+  position: absolute;
+  top: 38%;
+  left: 5%;
+  animation: fadeIn 4s ease 0s 1 normal;
+  width: clamp(500px, 60vw, 600px);
+  height: auto;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* main
+-------------------------------------*/
+main {
+  margin: 0 auto;
+}
+main h2 {
+  font-size: clamp(2rem, 4vh, 3.5rem);
+  line-height: 1.2;
+  letter-spacing: 2px;
+  font-family:"Roboto";
+}
+
+main p {
+  margin-bottom: 10px;
+  font-size: clamp(1.8rem, 2.5vh, 2rem);
+  line-height: 2.6;
+  letter-spacing: 2.6px;
+  text-align: justify;
+}
+
+main h3 {
+  font-size:clamp(4rem, 2.5vh, 4.5rem);
+  line-height: 1.8;
+  font-weight: 550;
+  letter-spacing: 2.4px;
+}
+
+/* .About
+------------------------------------ */
+.About {
+  margin-top:150px;
+  display: grid;
+  place-items: center;
+}
+.About .About_wrapper {
+  display: flex;
+  column-gap: 90px;
+}
+
+.About .image_wrapper {
+  position: relative;
+}
+
+.About .About_img2 {
+  position: absolute;
+  right: 390px;
+  top: 580px;
+}
+
+/* .productArea .product
+------------------------------------ */
+.productArea {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 500px;
+}
+.productArea h2 {
+  margin-left:10px;
+  line-height: 3;
+}
+
+.productArea .product_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 40px;
+  justify-content: center;
+}
+
+.productArea .product_wrapper li {
+  text-align: center;
+  width: 30%;
+  padding-bottom:70px;
+  display: inline-block;
+  flex-direction: column-reverse;
+}
+
+.productArea .product_wrapper li h3 {
+  font-size: 1.8rem;
+  text-align: start;
+}
+
+.productArea .product_wrapper li p {
+  line-height: 1.2;
+}
+
+.productArea .product_wrapper img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.productArea .product_wrapper img:hover {
+  opacity: 50%;
+  transition: 0.5s;
+}
+
+/* .introductionArea 
+------------------------------------ */
+.introductionArea {
+  margin: 0 auto;
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.seihin {
+  position: relative;
+}
+
+.seihin .text,.soudan .text {
+  margin-top:-20px;
+}
+
+.soudan {
+  position: relative; 
+}
+
+.introduction_img img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  filter: brightness(90%);
+}
+
+.introductionArea .text h3 {
+  position: absolute;
+  font-family: "Roboto";
+  font-weight:500;
+  left: 10%;
+  top: 50%;
+  color: #fff;
+  font-size: 6rem;
+}
+
+.introductionArea .text h3 span {
+  font-size: clamp(1rem, 2vw, 2rem);
+  font-family: "Noto Sans JP";
+}
+
+.introduction_img img:hover {
+  transition-duration: 0.4s;
+  filter: none;
+  opacity: 0.5;
+}
+
+/* .conceptArea 
+------------------------------------ */
+.conceptArea {
+  max-width: 1800px;
+  margin: 0 auto;
+  margin-top: 150px;
+}
+.conceptArea h2{
+ line-height: 3;
+ margin-left: 10px;
+}
+.conceptArea img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+}
+.conceptArea p {
+  line-height: 1.2;
+}
+
+/* .infoArea
+------------------------------------ */
+.infoArea {
+  margin: 0 auto;
+  margin-top: 100px;
+  max-width: 1800px;
+}
+
+.infoArea h2 {
+  text-align: start;
+  margin-left: 60px;
+}
+
+.info {
+  margin-top: 20px;
+}
+
+.info div {
+  display: flex;
+  margin: 0 60px;
+  justify-content: flex-start;
+  line-height: 2;
+  padding: 10px 0px;
+  border-bottom: 1px solid rgba(195, 197, 199, 0.815);
+}
+
+.info dt {
+  width: 20em;
+  font-weight: normal;
+}
+
+.info dd {
+  letter-spacing: 2px;
+  width: calc(100% - 20em);
+  text-align: justify;
+}
+
+.info a {
+  font-weight: normal;
+  text-decoration: none;
+  color: #000;
+  margin-left: 30px;
+}
+
+.info .news {
+  background-color: #ffd085d6;
+  padding: 5px 30px;
+}
+
+.info .event {
+  background-color: #ffdc9a69;
+  padding: 5px 32px;
+}
+
+.info div:last-child {
+  border: 0;
+}
+
+.info  a:hover,.event:hover,.news:hover {
+  opacity: 45%;
+  transition-duration: 0.5s;
+}
+
+/* footer
+----------------------------------- */
+footer {
+  margin-top:100px;
+  background-color: #ffdc9aa5;
+  color: #000;
+  height: 400px;
+}
+
+footer .content {
+  display: flex;
+  justify-content: center;
+}
+
+footer h2 img {
+  padding-top: 100px;
+  padding-left: 100px;
+}
+
+/* address
+------------------------------------ */
+address {
+  padding-left: 100px;
+  padding-top: 20px;
+  text-align: left;
+}
+/* .local
+------------------------------------ */
+.local {
+  margin: 0 auto;
+  padding-right: 150px;
+  padding-top: 100px;
+  display: flex;
+  column-gap: 40px;
+}
+
+.local ul li {
+  line-height: 3.5;
+  text-align: left;
+  font-family: "Roboto";
+}
+
+.local ul li a {
+  font-size: 2rem;
+  color: #000;
+  text-decoration: none;
+  padding-left: 20px;
+}
+
+/* small
+------------------------------------ */
+small {
+  display: block;
+  text-align: right;
+  line-height: 80px;
+  padding-right: 40px;
+  font-family: "Roboto";
+}
+
+/* ------------------------------------
+製品情報
+------------------------------------- */
+.products .fv {
+  background-image: url(../images/visual_img02.jpg);
+}
+/* SleepArea
+------------------------------------ */
+.sleepArea {
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  column-gap: 90px;
+}
+
+.sleepArea:nth-child(even) {
+  flex-direction: row-reverse;  
+}
+
+.sleepArea .sleep h3 {
+  font-size: 2.3rem;
+  line-height: 2.3;
+  font-weight: bold;
+}
+
+.sleepArea .sleep p {
+  width: 440px;
+}
+
+.sleepArea .sleep .shop  {
+  border: #ffd085d6 solid 2.5px;
+  color: #ffbe57;
+  text-align: center;
+  padding: 0 30px;
+  width: 300px;
+  margin: 0 auto;
+  float: right;
+} 
+
+.sleepArea .sleep .shop .bi-cart {
+  padding-right: 10px;
+}
+
+.sleepArea .sleep  a:hover {
+  opacity: 50%;
+  transition-duration: 0.5s;
+}
+
+a.anchor {
+  display: block;
+  padding-top: 90px;
+  margin-top: -90px;
+}
+/* ------------------------------------
+ねむりのご相談
+------------------------------------- */
+.sleepcontact .fv {
+  background-image: url(../images/visual_img04.jpg);
+}
+
+.sleepcontact footer {
+  margin-top:0 ;
+}
+
+/* .counselArea
+------------------------------------ */
+.counselArea  {
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.counselArea .counsel h2 {
+  font-size:2.5rem;
+  line-height: 2;
+  font-weight: 500;
+  font-family: "Noto Sans JP";
+}
+
+.counselArea .counsel h2 span {
+ font-size: 2.2rem;
+ color: #f4c979;
+}
+
+/* .supportArea
+  ------------------------------------ */
+.supportArea {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  column-gap: 40px;
+}
+
+.support {
+  line-height: 3;
+  width: 600px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.support h3 {
+  font-size: 2.5rem;
+}
+
+.support2 img {
+  width: 650px;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* .contactArea
+------------------------------------ */
+.contactArea {
+  margin-top: 150px;
+  text-align: center;
+  background-color: #ffdc9a4c;
+  padding-bottom: 100px;
+}
+
+.contactArea h2 {
+  padding-top: 50px;
+  line-height: 2.5;
+  font-family: "Noto Sans JP"; 
+}
+
+/* .contact-table
+------------------------------------ */
+ 
+.contact_message {
+    text-align: center;
+    line-height: 2;
+  }
+  
+  .essential {
+    background: #eb7c0e;
+    color: #fafafa;
+    padding: 0 10px;
+    font-weight: normal;
+    margin-left: 10px;
+  }
+  
+  .contact_wrapper  {
+    background: #fafafa;
+    padding: 90px;
+    margin: 50px auto;
+    width: 1000px;
+    height: 100%;
+  }
+  
+  .contact-table {
+    width: 100%;
+  }
+  
+  .table-list {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    letter-spacing: 0.05em;
+    width: 100%;
+    margin-bottom: 40px;
+}
+ 
+.table-list th {
+    font-weight: bold;
+    width: 250px;
+    text-align: left;
+    margin-top: 10px;
+}
+ 
+.table-list-address {
+    flex-wrap: wrap;
+}
+ 
+.table-list-address .input-area {
+    margin-bottom: 10px;
+}
+ 
+.input-area {
+    letter-spacing: 0.05em;
+    padding: 0 10px;
+    border: none;
+    width: 550px;
+    height: 40px;
+    box-sizing: border-box;
+    border: 1px solid #c4c4c4;
+    text-align: left;
+}
+ 
+.table-list td {
+    width: calc(100% - 250px);
+}
+ 
+
+textarea {
+  border: none;
+  width: 550px;
+  height: 200px;
+  padding: 0;
+  border: 1px solid #c4c4c4;
+  resize: vertical; /* 横方向のみサイズを固定する */
+  text-align: left;
+}
+
+input::placeholder{
+    color: #bfbfbf;
+    font-weight: bold;
+}
+
+textarea::placeholder {
+    color: #bfbfbf;
+   padding:10px ;
+   font-weight: bold;
+}
+ 
+input[type="text"] {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+ 
+.contact_wrapper  .text {
+    text-align: center;
+    margin-bottom: 100px;
+}
+ 
+.contact_wrapper  .text a {
+    color: #000;
+    border-bottom: 1px solid #000;
+    transition: all .3s;
+    text-decoration: none;
+}
+ 
+.contact_wrapper  .text a:hover {
+    border-bottom: 1px solid #777;
+    padding-bottom: 5px;
+    color: #777;
+}
+ 
+.submit-button {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    margin: 30px auto 0;
+    background-color: #ffdc9a;
+    cursor: pointer;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1.5;
+    outline: none;
+    -webkit-transition: all .3s;
+    transition: all .5s;
+    padding: 20px 100px;
+}
+ 
+.submit-button:hover {
+    opacity: 50%;
+    color: #000;
+}
+
+/* ------------------------------------
+企業情報
+------------------------------------- */
+.company .fv {
+  background-image: url(../images/visual_img03.jpg);
+}
+/* .greetingArea .greeting
+------------------------------------ */
+.greetingArea {
+  margin-top: 150px;
+  display: flex;
+ justify-content: center;
+ column-gap: 70px;
+}
+
+.greetingArea .greeting {
+  width: 600px;
+}
+
+.greetingArea .greeting .text {
+  display: flex;
+  justify-content: end;
+}
+
+/* .Overview
+------------------------------------ */
+.OverviewArea {
+  margin-top: 100px;
+  display: grid;
+ justify-content: center;
+}
+
+.OverviewArea h2 {
+  padding-left: 10px;
+}
+
+.OverviewArea .Overview {
+  width: 1100px;
+  border-left: none;
+  border-right: none;
+  line-height: 4;
+  font-size: 2rem;
+}
+
+.OverviewArea .Overview th {
+  width: 100px;
+  padding-left: 20px;
+  font-weight: normal;
+  border-bottom: 1px solid #ffdc9a;
+}
+
+.OverviewArea .Overview td {
+  letter-spacing: 2px;
+  border-bottom: 1px solid #ffdc9ada;
+  border-right: none;
+  border-left: none;
+  padding-left: 100px;
+}
+
+.OverviewArea .Overview .ul-disc {
+  text-align: left;
+  line-height: 2.3;
+}
+
+/* ------------------------------------
+お問合せ
+------------------------------------- */
+.inquiry .fv {
+  background: url(../images/visual_img05.jpg);
+  background-size: cover;
+  position: relative;
+}
+
+.inquiry h2 {
+  margin-top: 60px;
+  text-align: center;
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>布団などの寝具なら朝陽公式サイト</title>
+    <meta
+      name="author"
+      content="朝陽株式会社（課題サイトのための架空の会社です）"
+    />
+    <meta
+      name="description"
+      content="朝陽公式ホームページです。様々な寝具（マットレス・羽毛布団・枕など）であなたの快適な眠りをサポート！ 寝つきが悪いなどの睡眠のお悩みは〈ねむりのご相談〉まで。枕や布団など寝具の事ならお任せ下さい。"
+    />
+    <link href="favicon_1.svg" rel="icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Noto+Serif+JP:wght@600;900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/reset.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+  <body class="inquiry">
+    <div class="wrapper">
+      <header>
+        <h1>
+          <a href="index.html"
+            ><img src="images/logokuro.png" alt="朝陽株式会社"
+          /></a>
+        </h1>
+        <nav class="gloval">
+          <ul>
+            <li>
+              <a href="catalog.html" class="btn"
+                ><span class="btn__text">Products</span
+                ><span class="btn__text">製品情報</span></a
+              >
+            </li>
+            <li>
+              <a href="advice.html" class="btn"
+                ><span class="btn__text">Sleep advise</span
+                ><span class="btn__text">眠りのご相談</span></a
+              >
+            </li>
+            <li>
+              <a href="company.html" class="btn"
+                ><span class="btn__text">Company</span>
+                <span class="btn__text">会社情報</span></a
+              >
+            </li>
+            <li>
+              <a href="inquiry.html" class="btn"
+                ><span class="btn__text">contact</span>
+                <span class="btn__text">お問合せ</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <div class="fv">
+        <h2>お問い合わせ</h2>
+      </div>
+      <!-- /.visual_img -->
+
+      <div class="content">
+        <main>
+          <h2>鋭意製作中です。</h2>
+        </main>
+      </div>
+      <!-- /.content -->
+
+      <footer>
+        <div class="content">
+          <section>
+            <h2>
+              <a href="index.html"
+                ><img src="images/logokuro.png" alt="朝陽株式会社"
+              /></a>
+            </h2>
+            <address>
+              <img
+                src="images/tell.png"
+                alt="朝陽株式会社電話番号 0120-00-0000"
+              />
+              〒000-0000 <br />京都府京都市下京区東塩小路釜殿町100-10-1
+            </address>
+          </section>
+          <nav class="local">
+            <ul>
+              <li><a href="catalog.html">商品情報</a></li>
+              <li><a href="company.html">企業情報</a></li>
+              <li><a href="advice.html">ねむりのご相談</a></li>
+              <li><a href="inquiry.html">お問い合わせ</a></li>
+            </ul>
+          </nav>
+          <!-- /.local -->
+        </div>
+        <!-- /.content -->
+        <small>&copy; Asahi All Rights Reserved.</small>
+      </footer>
+    </div>
+    <!-- /.wrapper -->
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script>
+      $(function () {
+        $(window).on("scroll", function () {
+          if (400 < jQuery(this).scrollTop()) {
+            $(".header_menu li a,.js-header").addClass("headerColorScroll");
+          } else {
+            $(".header_menu li a,.js-header").removeClass("headerColorScroll");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
