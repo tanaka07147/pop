@@ -1,0 +1,305 @@
+@charset "utf-8";
+
+body {
+  width: 1024px;
+  margin: 0 auto;
+  font-family: "Helvetica Neue","Segoe UI","Hiragino Kaku Gothic ProN W3","メイリオ",Meiryo,arial,sans-serif;
+}
+
+body::-webkit-scrollbar{
+  display:none;
+}
+/* -----------------------------------------------
+header
+-------------------------------------------------- */
+header h1 {
+  float: left;
+  margin-right: 50px;
+  padding: 5px;
+}
+
+header p {
+  float: right;
+  padding: 10px;
+}
+
+/* -----------------------------------------------
+モーダル
+-------------------------------------------------- */
+.layer_board_bg,
+.layer_board {
+position: absolute;
+}
+.layer_board_bg {
+position: fixed;
+width: 100%;
+height: 100%;
+z-index: 1000;
+top: 0;
+left: 0;
+display: none;
+cursor: pointer;
+background: rgba(178, 178, 178, 0.746);
+}
+.layer_board {
+display: none;
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+background: #fff;
+text-align: center;
+z-index: 2000;
+padding: 10px;
+}
+.layer_board p {
+margin-bottom: 10px;
+}
+
+.layer_box {
+  position: relative;
+}
+
+.modal_btn {
+  position: absolute;
+  top: 340px;
+  left: 135px;
+  animation: poyopoyo 2s ease-out infinite;
+ opacity: 1;
+}
+
+.modal_btn a {
+  transition: .3s; 
+}
+
+.modal_btn :hover {
+  transform: scale(1.1);
+}
+@keyframes  poyopoyo {
+  0%, 40%, 60%, 80% {
+    transform: scale(1.0);
+  }
+  50%, 70% {
+    transform: scale(0.95);
+  }
+}
+.mdl_btn_close {
+display: block;
+font-size: 1.2rem;
+text-decoration: none;
+background: rgb(48, 134, 214);
+color: #fff;
+text-align: center;
+padding: 15px 20px;
+width: 200px;
+margin: 0 auto;
+}
+
+/* -----------------------------------------------
+ボタン
+-------------------------------------------------- */
+.cv,.cv_2,.cv_3 {
+  position: relative;
+  z-index: 1;
+}
+
+.cv_btn,.cv_btn_2,.cv_btn_3 {
+ position: absolute;
+ z-index: 5;
+ top: 385px;
+ left: 280px;
+ animation: poyopoyo 2s ease-out infinite;
+ opacity: 1;
+}
+
+.cv_btn a,.cv_btn_2 a,.cv_btn_3 a {
+  display: inline-block;
+  transition: .3s; 
+}
+
+.cv_btn:active,.cv_btn_2:active,.cv_btn_3:active {
+  pointer-events: none;
+}
+.cv_btn a:hover,.cv_btn_2 a:hover,.cv_btn_3 a:hover {
+  transform: scale(1.1);
+}
+@keyframes  poyopoyo {
+  0%, 40%, 60%, 80% {
+    transform: scale(1.0);
+  }
+  50%, 70% {
+    transform: scale(0.95);
+  }
+}
+/* -----------------------------------------------
+棒グラフ
+-------------------------------------------------- */
+.glaph {
+  position: relative;
+}
+.glaphbox{
+  position: absolute;
+  width:610px;
+  top: 30px;
+  left: -10px;
+  padding: 10px;
+  
+}
+/* -----------------------------------------------
+円グラフ
+-------------------------------------------------- */
+.fadeUpbox{
+  position: relative;
+ }
+ .fadein{
+   position: absolute;
+   top: 210px;
+   left: 320px;
+ }
+
+/* -----------------------------------------------
+お客様情報
+-------------------------------------------------- */
+.inner_contents h3 {
+    font-size: 1.875em;
+    background: #c6e1f1;
+    line-height: 1;
+    margin-bottom: 7px;
+    padding: 6px 15px 9px 15px;
+    text-align: left;
+    vertical-align: baseline;
+}
+
+
+.input_form .item_title {
+  display: block;
+  font-weight: bold;
+  line-height: 20px;
+  text-align: left;
+  padding-top: 8px;
+
+}
+
+.info_text {
+  display: block;
+  width: 100%;
+  clear: both;
+  font-size: 20px;
+  line-height: 1.3;
+  margin-bottom: 7px;
+  padding: 14px 0 3.5px;
+  text-align: left;
+} 
+
+.input_form {
+  width: 100%;
+  border: 1px solid #bbb;
+  border-collapse:collapse ; 
+  text-indent: initial;
+  border-spacing:2px; 
+  box-sizing: border-box;
+}
+
+.item_inp_name {
+  width: calc(50% - 5px);
+  float: left;
+  margin-right:5px;
+}
+
+.input_form th {
+  min-width: 230px;
+  border: 1px solid #95bccb;
+  background-color: #c8dfed99;
+  line-height: 1.7;
+  padding: 16px;
+  text-align: left;
+  font-size: 20px;
+  vertical-align: middle; 
+}
+
+.input_form td {
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #cfcfcf;
+}
+
+.form_items {
+  padding: 16px;
+  position: relative;
+  text-align:left ;
+}
+
+.input_form  input[type="text"],.input_form  input[type="email"] {
+  width: 100%;
+  height: 40px;
+  border:1px solid #999;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 4px 12px; 
+}
+
+.input_form  input[type="tel"] {
+  line-height: 1.6;
+  font-size: 20px;
+  padding: 4px 12px; 
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  clear: both;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* -----------------------------------------------
+お支払情報
+-------------------------------------------------- */
+.payment h3 {
+margin-top: 50px;
+}
+
+.item_payment_title {
+  padding: 10px;
+  background-color: #c8dfed99;
+  border: 1px solid #95bccb;
+}
+
+/* -----------------------------------------------
+ボタン
+-------------------------------------------------- */
+.button_box {
+  margin-top: 50px;
+  text-align: center;
+}
+.button_box button {
+  font-size: 2rem;
+  padding: 10px 30px;
+  min-width: 100px;
+  text-align: center;
+}
+.btnsp {
+  background-color: #ff3217;
+  border: 3px solid #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px 1px rgba(154, 154, 154, 0.594);
+  color: #fff;
+  font-weight: bold;
+  transition-duration: .15s;
+  margin-bottom: 40px;
+}
+
+.button_box button:hover {
+  background: #ff3217c9;
+  box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.3);
+}
+
+.button:hover {
+  opacity: .85;
+}
+
+
+
+
